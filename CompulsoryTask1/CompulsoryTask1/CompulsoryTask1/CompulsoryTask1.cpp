@@ -49,26 +49,27 @@ void creatingpoints()
 {
     GLfloat start = -10.0f;
     GLfloat end = 10.f;
-    GLfloat step = 0.1f;
+    GLfloat intervals = 100.f;
+    GLfloat step = (end - start) / intervals;
     
     for (GLfloat i = start; i < end; i += step)
-    {
-        float scale = 10;
-        vertex v;
-        
-        //Location
-        v.x = i/scale;
-        v.y = y(i)/scale;
-        v.z = 0;
-
-        //Color
-        v.r = dy(i) >= 0.0f ? 0.0f : 1.0f;
-        v.g = dy(i) >= 0.0f ? 1.0f : 0.0f;
-        v.b = 0.0f;
-
-        //Pushing the vertex into vector
-        vertices.push_back(v);
-    }
+         {
+             float scale = 10;
+             vertex v;
+             
+             //Location
+             v.x = i/scale;
+             v.y = y(i)/scale;
+             v.z = 0;
+     
+             //Color
+             v.r = dy(i) >= 0.0f ? 0.0f : 1.0f;
+             v.g = dy(i) >= 0.0f ? 1.0f : 0.0f;
+             v.b = 0.0f;
+     
+             //Pushing the vertex into vector
+             vertices.push_back(v);
+         }
 
     std::cout << "Points created " << vertices.size() << std::endl;
 }

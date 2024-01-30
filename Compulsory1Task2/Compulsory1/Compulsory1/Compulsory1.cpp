@@ -41,7 +41,7 @@ return sin(t)-t/10; //function y = sin(y)
 
 GLfloat dy(GLfloat t)
 {
-    return cos(t); //function y' = cos(y)
+    return cos(t)-1/10; //function y' = cos(y)
 }
 
 GLfloat x(GLfloat t)
