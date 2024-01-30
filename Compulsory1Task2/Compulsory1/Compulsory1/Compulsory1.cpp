@@ -49,6 +49,11 @@ GLfloat x(GLfloat t)
     return cos(t)-t/10; //function x = cos(x)
 }
 
+GLfloat dx(GLfloat t)
+{
+    return -sin(t)-1/10; //function x' = -sin(x)
+}
+
 
 void creatingpoints()
 {
@@ -69,7 +74,7 @@ void creatingpoints()
         //Color
         v.r = dy(i) >= 0 ? 0 : 1;
         v.g = dy(i) >= 0 ? 1 : 0;
-        v.b = 0;
+        v.b = dx(i) >= 0 ? 0 : 1;
 
         //Pushing the vertex into vector
         vertices.push_back(v);
